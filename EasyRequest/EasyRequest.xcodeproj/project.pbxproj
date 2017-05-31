@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD125ACF1EDF51E00031B8C4 /* EasyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD125ACE1EDF51E00031B8C4 /* EasyRequest.swift */; };
+		BD125AD11EDF61BB0031B8C4 /* EasyRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD125AD01EDF61BB0031B8C4 /* EasyRequestError.swift */; };
 		E80E8A8D1EDF3C88004B5EAD /* EasyRequest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E80E8A831EDF3C88004B5EAD /* EasyRequest.framework */; };
 		E80E8A921EDF3C88004B5EAD /* EasyRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80E8A911EDF3C88004B5EAD /* EasyRequestTests.swift */; };
 		E80E8A941EDF3C88004B5EAD /* EasyRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = E80E8A861EDF3C88004B5EAD /* EasyRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,6 +25,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BD125ACE1EDF51E00031B8C4 /* EasyRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyRequest.swift; sourceTree = "<group>"; };
+		BD125AD01EDF61BB0031B8C4 /* EasyRequestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyRequestError.swift; sourceTree = "<group>"; };
 		E80E8A831EDF3C88004B5EAD /* EasyRequest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EasyRequest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E80E8A861EDF3C88004B5EAD /* EasyRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EasyRequest.h; sourceTree = "<group>"; };
 		E80E8A871EDF3C88004B5EAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -73,6 +77,8 @@
 			children = (
 				E80E8A861EDF3C88004B5EAD /* EasyRequest.h */,
 				E80E8A871EDF3C88004B5EAD /* Info.plist */,
+				BD125ACE1EDF51E00031B8C4 /* EasyRequest.swift */,
+				BD125AD01EDF61BB0031B8C4 /* EasyRequestError.swift */,
 			);
 			path = EasyRequest;
 			sourceTree = "<group>";
@@ -149,6 +155,7 @@
 					E80E8A821EDF3C88004B5EAD = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 248SB9J68G;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					E80E8A8B1EDF3C88004B5EAD = {
@@ -198,6 +205,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD125AD11EDF61BB0031B8C4 /* EasyRequestError.swift in Sources */,
+				BD125ACF1EDF51E00031B8C4 /* EasyRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +333,7 @@
 		E80E8A981EDF3C88004B5EAD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 248SB9J68G;
@@ -336,6 +346,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.EasyRequest.EasyRequest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -343,6 +354,7 @@
 		E80E8A991EDF3C88004B5EAD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 248SB9J68G;
@@ -362,6 +374,7 @@
 		E80E8A9B1EDF3C88004B5EAD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 248SB9J68G;
 				INFOPLIST_FILE = EasyRequestTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -374,6 +387,7 @@
 		E80E8A9C1EDF3C88004B5EAD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 248SB9J68G;
 				INFOPLIST_FILE = EasyRequestTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -402,6 +416,7 @@
 				E80E8A991EDF3C88004B5EAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E80E8A9A1EDF3C88004B5EAD /* Build configuration list for PBXNativeTarget "EasyRequestTests" */ = {
 			isa = XCConfigurationList;
@@ -410,6 +425,7 @@
 				E80E8A9C1EDF3C88004B5EAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
