@@ -17,8 +17,8 @@ enum EasyRequestMethods : String {
 }
 
 protocol EasyRequestDelegate {
-	func delegateEasyRequestSuccess()
-	func delegateEasyRequestError(error: EasyRequestErrors)
+    func delegateEasyRequestSuccess(body: Data?, headers: [AnyHashable: Any], status: Int)
+	func delegateEasyRequestError(_ error: EasyRequestErrors)
 }
 
 class EasyRequest {
@@ -27,6 +27,8 @@ class EasyRequest {
     private var baseUrl: URL
 	private var commonHeaders : [[String: String]] = []
     private var environment: [[String: String]] = []
+
+    var delegate: EasyRequestDelegate?
 
     init(baseUrl: String) {
         self.baseUrl = URL(string: baseUrl)!
@@ -58,16 +60,29 @@ class EasyRequest {
     {
         let urlRequest = createURLRequest(to: "", withParameters: [], usingMethod: .get, andSpecificHeaders: [], sending: nil)
 
+        doRequest(withUrlRequest: urlRequest)
+
 		// Execute request withou parameters, use url setted in addUrl
 	}
 	
     // Function to finally execute request to url informatted
-	private func doRequest() {
-
-
+    private func doRequest(withUrlRequest urlRequest: URLRequest) {
+        let session = URLSession(configuration: .default)
 	}
 
-    private func createURLRequest (
+    private func sessionCompletionHandler(data: Data?, response: URLResponse?, error: Error?) {
+        if let errorReceived = error {
+            let sessionError = EasyRequestErrors(kind: .sessionError, error: errorReceived)
+            self.delegate?.delegateEasyRequestError(sessionError)
+        }
+
+        let headers = (response as! HTTPURLResponse).allHeaderFields
+        let status = (response as! HTTPURLResponse).statusCode
+
+        self.delegate?.delegateEasyRequestSuccess(body: data, headers: headers, status: status)
+    }
+
+private func createURLRequest (
         to pathUrl: String,
         withParameters params: [[String: String]],
         usingMethod method: EasyRequestMethods,

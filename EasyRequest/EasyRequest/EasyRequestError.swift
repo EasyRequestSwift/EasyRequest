@@ -11,10 +11,12 @@ import Foundation
 struct EasyRequestErrors : Error {
 	
 	enum EasyRequestErrors : String {
-		case notfound = "Error 404 Not Found"
-		case error = "Error 400 Error"
-		case internalerror = "Error 500 Internal Error"
+        case sessionError
+		case notfound
+		case error
+		case internalerror
 	}
 	
-	var error: EasyRequestErrors
+	var kind: EasyRequestErrors
+    var error: Error
 }
