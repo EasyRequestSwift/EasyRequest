@@ -28,35 +28,35 @@ class EasyRequest {
 	private var commonHeaders : [[String: String]] = []
     private var environment: [[String: String]] = []
 
-    var delegate: EasyRequestDelegate?
+    public var delegate: EasyRequestDelegate?
 
-    init(baseUrl: String) {
+    public init(baseUrl: String) {
         self.baseUrl = URL(string: baseUrl)!
     }
 	
 	// MARK: - Manage Headers
     // Function to add Headers to use in request
-	func addCommonHeader(key: String, value: String) {
+	public func addCommonHeader(key: String, value: String) {
         self.commonHeaders.append([key: value])
 	}
 
     // Function to remove header
-    func removeCommonHeader(named name: String) {
+    public func removeCommonHeader(named name: String) {
         self.commonHeaders = self.commonHeaders.filter() { header in header.keys.first! != name }
     }
 
     // Function to set all headers at once
-    func setCommonHeaders(headers: [[String: String]]) {
+    public func setCommonHeaders(headers: [[String: String]]) {
         self.commonHeaders = headers
     }
 
 	// MARK: - Requests
-	func executeRequest(
+	public func executeRequest(
         to pathUrl: String,
         withParameters params: [[String: String]],
         usingMethod method: EasyRequestMethods,
         andSpecificHeaders specificHeaders: [[String: String]],
-        sending body: Data?)
+        sendingBody body: Data?)
     {
         let urlRequest = createURLRequest(to: "", withParameters: [], usingMethod: .get, andSpecificHeaders: [], sending: nil)
 
