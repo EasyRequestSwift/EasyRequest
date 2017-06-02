@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		BD125ACF1EDF51E00031B8C4 /* EasyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD125ACE1EDF51E00031B8C4 /* EasyRequest.swift */; };
-		BD125AD11EDF61BB0031B8C4 /* EasyRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD125AD01EDF61BB0031B8C4 /* EasyRequestError.swift */; };
 		E80E8A8D1EDF3C88004B5EAD /* EasyRequest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E80E8A831EDF3C88004B5EAD /* EasyRequest.framework */; };
 		E80E8A921EDF3C88004B5EAD /* EasyRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80E8A911EDF3C88004B5EAD /* EasyRequestTests.swift */; };
 		E80E8A941EDF3C88004B5EAD /* EasyRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = E80E8A861EDF3C88004B5EAD /* EasyRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -26,7 +25,6 @@
 
 /* Begin PBXFileReference section */
 		BD125ACE1EDF51E00031B8C4 /* EasyRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyRequest.swift; sourceTree = "<group>"; };
-		BD125AD01EDF61BB0031B8C4 /* EasyRequestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyRequestError.swift; sourceTree = "<group>"; };
 		E80E8A831EDF3C88004B5EAD /* EasyRequest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EasyRequest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E80E8A861EDF3C88004B5EAD /* EasyRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EasyRequest.h; sourceTree = "<group>"; };
 		E80E8A871EDF3C88004B5EAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,7 +76,6 @@
 				E80E8A861EDF3C88004B5EAD /* EasyRequest.h */,
 				E80E8A871EDF3C88004B5EAD /* Info.plist */,
 				BD125ACE1EDF51E00031B8C4 /* EasyRequest.swift */,
-				BD125AD01EDF61BB0031B8C4 /* EasyRequestError.swift */,
 			);
 			path = EasyRequest;
 			sourceTree = "<group>";
@@ -205,7 +202,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD125AD11EDF61BB0031B8C4 /* EasyRequestError.swift in Sources */,
 				BD125ACF1EDF51E00031B8C4 /* EasyRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

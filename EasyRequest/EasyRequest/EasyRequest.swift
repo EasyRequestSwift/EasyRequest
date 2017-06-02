@@ -18,7 +18,7 @@ enum EasyRequestMethods : String {
 
 protocol EasyRequestDelegate {
     func delegateEasyRequestSuccess(body: Data?, headers: [AnyHashable: Any], status: Int)
-	func delegateEasyRequestError(_ error: EasyRequestErrors)
+	func delegateEasyRequestError(error: Error)
 }
 
 class EasyRequest {
@@ -76,8 +76,7 @@ class EasyRequest {
 
     private func sessionCompletionHandler(data: Data?, response: URLResponse?, error: Error?) {
         if let errorReceived = error {
-            let sessionError = EasyRequestErrors(kind: .sessionError, error: errorReceived)
-            self.delegate?.delegateEasyRequestError(sessionError)
+            self.delegate?.delegateEasyRequestError(error: errorReceived)
         }
 
         let headers = (response as! HTTPURLResponse).allHeaderFields
