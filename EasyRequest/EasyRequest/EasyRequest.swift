@@ -49,7 +49,7 @@ class EasyRequest {
     func setCommonHeaders(headers: [[String: String]]) {
         self.commonHeaders = headers
     }
-	
+
 	// MARK: - Requests
 	func executeRequest(
         to pathUrl: String,
@@ -68,6 +68,10 @@ class EasyRequest {
     // Function to finally execute request to url informatted
     private func doRequest(withUrlRequest urlRequest: URLRequest) {
         let session = URLSession(configuration: .default)
+
+        let dataTask = session.dataTask(with: urlRequest, completionHandler: sessionCompletionHandler)
+
+        dataTask.resume()
 	}
 
     private func sessionCompletionHandler(data: Data?, response: URLResponse?, error: Error?) {
@@ -82,7 +86,7 @@ class EasyRequest {
         self.delegate?.delegateEasyRequestSuccess(body: data, headers: headers, status: status)
     }
 
-private func createURLRequest (
+    private func createURLRequest (
         to pathUrl: String,
         withParameters params: [[String: String]],
         usingMethod method: EasyRequestMethods,
