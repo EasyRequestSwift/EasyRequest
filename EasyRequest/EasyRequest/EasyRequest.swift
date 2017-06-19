@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum EasyRequestMethods : String {
+public enum EasyRequestMethods : String {
 	case get = "GET"
 	case post = "POST"
 	case put = "PUT"
@@ -16,12 +16,12 @@ enum EasyRequestMethods : String {
 	case patch = "PATCH"
 }
 
-protocol EasyRequestDelegate {
+public protocol EasyRequestDelegate {
     func delegateEasyRequestSuccess(body: Data?, headers: [AnyHashable: Any], status: Int)
 	func delegateEasyRequestError(error: Error)
 }
 
-class EasyRequest {
+public class EasyRequest {
 	
 	// MARK: - Attributes
     private var baseUrl: URL
